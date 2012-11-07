@@ -12,6 +12,9 @@ group :development do
 end
 group :test do
 	gem 'rspec-rails', '2.11.4'
+	gem 'nokogiri' 
+	gem 'webrat'
+	gem 'spork', '~> 0.9.2'
 end
 
 # Gems used only for assets and not required
