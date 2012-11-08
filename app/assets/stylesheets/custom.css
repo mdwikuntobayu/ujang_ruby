@@ -44,10 +44,9 @@ nav ul{
 nav ul li{
 	list-style-type: none;
 	display: inline;
-	padding: 0.2 em 0;
 }
 nav ul li a{
-	padding: 0 5px;
+	padding: 5px;
 	font-weight: bold;
 }
 a.signup_button{
