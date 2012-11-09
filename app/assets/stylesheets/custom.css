@@ -1,7 +1,9 @@
 .container{
 	width: 710px;
 }
-
+body{
+	background: #729fcf;
+}
 header{
 	padding-top: 20px;
 }
@@ -13,14 +15,14 @@ section{
 	margin-top: 1em;
 	font-size: 120%;
 	padding: 20px;
-	background: #d3d7cf;
+	background: #edd400;
 }
 section h1{
 	font-size: 200%;
 }
 /*Links*/
 a{
-	color: #09c;
+	color: #3465a4;
 	text-decoration: none;
 }
 a:hover{
@@ -28,7 +30,7 @@ a:hover{
 	text-decoration: underline;
 }
 a:visited{
-	color: #069;
+	color: #3465a4;
 }
 /*Navigation*/
 nav{
@@ -75,4 +77,27 @@ footer{
 }
 footer nav{
 	float: none;
+}
+/*user show page*/
+table.profile{
+	width: 100%;
+	margin-bottom: 0;
+}
+td.main{
+	width: 70%;
+	padding: 1em;
+}
+td.sidebar{
+	width: 30%;
+	padding: 1em;
+	vertical-align: top;
+	color: #ffffff;
+	background: #204a87;
+}
+td.sidebar a{
+	color: #edd400;
+}
+.profile img.gravatar{
+	border: 1px solid #000;
+	margin-bottom: -15px;
 }
