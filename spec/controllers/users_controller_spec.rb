@@ -17,6 +17,8 @@ describe UsersController do
 			get :show, :id => @user
 			assigns(:user).should == @user
 		end
+	
+					
 	end
 		
   describe "GET 'new'" do

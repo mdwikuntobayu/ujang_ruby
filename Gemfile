@@ -6,6 +6,9 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+
+
+gem 'gravatar_image_tag', '~> 1.1.3'
 	 
 group :development do
 	gem 'rspec-rails', '2.11.4'
