@@ -54,15 +54,58 @@ describe UsersController do
   		it "should create user" do
   			lambda do
   				post :create, :user => @attr
-  			end.should change(User, :count).by(2)
+  			end.should change(User, :count).by(1)
   		end
   		
   		it "should redirect to user page" do
   			post :create, :user => @attr
   			response.should redirect_to(user_path(assigns(:user)))
   		end
-  	end
-  
+  	end  
+  	
   end
+  
+  describe "GET 'edit'" do
+  	before(:each) do
+			@user = FactoryGirl.create(:user)
+		end
+		
+		it "should be successful " do
+			get :edit, :id => @user
+			response.should be_success
+		end
+  end
+  
+    describe "PUT 'update'" do
+  		before(:each) do
+				@user = FactoryGirl.create(:user)
+			end
+			
+			describe "faillur" do
+				before(:each) do
+					@attr = {:name => "",  :email => "", :password => "", :password_confirmation => ""}
+				end
+				
+				it "should render the edit page" do
+					put :update, :id => @user, :user => @attr
+					response.should render_template('edit')
+				end	
+			end
+			
+			describe "success" do
+				before(:each) do
+					@attr = {:name => "New Name",  :email => "new@email.com", :password => "abcdef", :password_confirmation => "abcdef"}
+				end
+					
+				it "should change the user attributes" do
+					put :update, :id => @user, :user => @attr
+					user = assigns(:user)
+					@user.reload
+					@user.name.should == user.name
+					@user.email.should == user.email
+					@user.encrypted_password.should == user.encrypted_password
+				end
+			end
+		end
 
 end

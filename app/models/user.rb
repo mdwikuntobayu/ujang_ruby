@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 		end
 	end
 	
-  #--------encrypt password-----------------
+  #--------encrypt password algorithm-----------------
   def has_password?(submitted_password)
   	encrypted_password == encrypt(submitted_password)
   end
