@@ -4,4 +4,10 @@ module UsersHelper
 																																								:class => 'gravatar round',
 																																								:gravatar => options)
 	end
+	
+	def error(field)
+    if @user.errors[field].any?
+        raw @user.errors[field].first
+    end
+	end
 end
