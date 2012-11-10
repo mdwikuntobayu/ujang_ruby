@@ -28,14 +28,17 @@ class User < ActiveRecord::Base
 
   before_save :encrypt_password  
 	
-	def self.authenticate(email, submitted_password)
-		user = User.find_by_email(email)
-		(user && user.has_password?(submitted_password)) ? user : nil
-	end
-	
-	def self.authenticate_with_salt(id, cooki_salt) 
-		user = find_by_id(id)
-		(user && user.salt == cookies_salt) ? user : nil
+	class << self
+		#method for session_controller
+		def authenticate(email, submitted_password)
+			user = find_by_email(email)
+			(user && user.has_password?(submitted_password)) ? user : nil
+		end
+		#method for sessions_helper
+		def authenticate_with_salt(id, cookies_salt) 
+			user = find_by_id(id)
+			(user && user.salt == cookies_salt) ? user : nil
+		end
 	end
 	
   #--------encrypt password-----------------
