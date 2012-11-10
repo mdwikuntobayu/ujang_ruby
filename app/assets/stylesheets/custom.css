@@ -101,3 +101,8 @@ td.sidebar a{
 	border: 1px solid #000;
 	margin-bottom: -15px;
 }
+/*field style*/
+div.field, div.actions{
+	font-size: 18px;
+	margin-bottom: 10px;
+}
